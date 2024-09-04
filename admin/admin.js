@@ -1,0 +1,1 @@
+// Handle admin functionalities and detailed reports

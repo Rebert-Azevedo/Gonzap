@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <link rel="stylesheet" href="./mensagens.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciar Mensagens</h1>
+        <button id="btn-add-message">Adicionar Mensagem</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th aria-placeholder="Nome msg">Nome</th>
+                    <th>Texto</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="message-list">
+                <!-- Mensagens adicionadas aparecerão aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para adicionar/editar mensagens -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Adicionar Mensagem</h2>
+            <form id="message-form">
+                <label for="message-name">Nome</label>
+                <input type="text" id="message-name" required>
+                <span class="error" id="name-error">Campo obrigatório</span>
+
+                <label for="message-text">Texto</label>
+                <textarea id="message-text" required></textarea>
+                <span class="error" id="text-error">Campo obrigatório</span>
+
+                <div class="modal-buttons">
+                    <button type="button" id="btn-cancel">Cancelar</button>
+                    <button type="submit" id="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./mensagens.js"></script>
+</body>
+</html>

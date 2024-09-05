@@ -1,12 +1,11 @@
-chrome.runtime.onInstalled.addListener(() => {
-  console.log("Gonzap extension installed");
-});
+const db = require('./db/db');
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === "login") {
-    // Handle login
-  } else if (request.action === "register") {
-    // Handle register
+  if (request.action === "getData") {
+    db.query('SELECT * FROM users', (error, results) => {
+      if (error) throw error;
+      sendResponse({ data: results });
+    });
   }
-  sendResponse({ status: "success" });
+  return true;  // Indicate asynchronous response
 });

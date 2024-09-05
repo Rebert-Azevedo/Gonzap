@@ -1,4 +1,5 @@
-const mysql = require('gonzap');
+const mysql = require('mysql');
+const config = require('./config');
 
 const con = mysql.createConnection(
   "mysql://root:zFNSzwzuipvKDaeqxeOooYeiiPWabYVV@autorack.proxy.rlwy.net:13399/railway"

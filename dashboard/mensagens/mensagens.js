@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCancel = document.getElementById('btn-cancel');
     const modalTitle = document.getElementById('modal-title');
     const messageName = document.getElementById('message-name');
-    const messageText = document.getElementById('message-text');
+    const messageContent = document.getElementById('message-content');
 
     let editIndex = null;
 
@@ -28,32 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const name = messageName.value.trim();
-        const text = messageText.value.trim();
+        const content = messageContent.value.trim();
 
-        if (!name || !text) {
+        if (!name || !content) {
             // Mostrar mensagens de erro
             document.getElementById('name-error').style.display = name ? 'none' : 'block';
-            document.getElementById('text-error').style.display = text ? 'none' : 'block';
+            document.getElementById('message-error').style.display = content ? 'none' : 'block';
             return;
         }
 
         if (editIndex === null) {
             // Adicionar nova mensagem
-            addMessage(name, text);
+            addMessage(name, content);
         } else {
             // Editar mensagem existente
-            updateMessage(editIndex, name, text);
+            updateMessage(editIndex, name, content);
         }
 
         messageModal.style.display = 'none';
     });
 
     // Função para adicionar mensagem na lista
-    function addMessage(name, text) {
+    function addMessage(name, content) {
         const row = document.createElement('tr');
+
         row.innerHTML = `
             <td>${name}</td>
-            <td>${text}</td>
+            <td>${content}</td>
             <td>
                 <button class="btn-edit">Editar</button>
                 <button class="btn-delete">Excluir</button>
@@ -71,21 +72,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function editMessage(index) {
         const row = messageList.rows[index];
         const name = row.cells[0].textContent;
-        const text = row.cells[1].textContent;
+        const content = row.cells[1].textContent;
 
         messageName.value = name;
-        messageText.value = text;
-
+        messageContent.value = content;
         modalTitle.textContent = 'Editar Mensagem';
         messageModal.style.display = 'flex';
         editIndex = index;
     }
 
     // Função para atualizar mensagem
-    function updateMessage(index, name, text) {
+    function updateMessage(index, name, content) {
         const row = messageList.rows[index];
+
         row.cells[0].textContent = name;
-        row.cells[1].textContent = text;
+        row.cells[1].textContent = content;
     }
 
     // Função para excluir mensagem

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagens</title>
+    <title>Gerenciar Mensagens</title>
     <link rel="stylesheet" href="./mensagens.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
         <table>
             <thead>
                 <tr>
-                    <th aria-placeholder="Nome msg">Nome</th>
-                    <th>Texto</th>
+                    <th>Nome</th>
+                    <th>Mensagem</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -34,9 +34,9 @@
                 <input type="text" id="message-name" required>
                 <span class="error" id="name-error">Campo obrigatório</span>
 
-                <label for="message-text">Texto</label>
-                <textarea id="message-text" required></textarea>
-                <span class="error" id="text-error">Campo obrigatório</span>
+                <label for="message-content">Mensagem</label>
+                <textarea id="message-content" required></textarea>
+                <span class="error" id="message-error">Campo obrigatório</span>
 
                 <div class="modal-buttons">
                     <button type="button" id="btn-cancel">Cancelar</button>

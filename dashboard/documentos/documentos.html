@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Documentos</title>
+    <link rel="stylesheet" href="./documentos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciar Documentos</h1>
+        <button id="btn-add-document">Adicionar Documento</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Documento</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="document-list">
+                <!-- Documentos adicionados aparecerão aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para adicionar/editar documentos -->
+    <div id="document-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Adicionar Documento</h2>
+            <form id="document-form">
+                <label for="document-name">Nome</label>
+                <input type="text" id="document-name" required>
+                <span class="error" id="name-error">Campo obrigatório</span>
+
+                <label for="document-file">Selecione o documento</label>
+                <input type="file" id="document-file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt" required>
+                <span class="error" id="file-error">Campo obrigatório</span>
+
+                <div class="modal-buttons">
+                    <button type="button" id="btn-cancel">Cancelar</button>
+                    <button type="submit" id="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./documentos.js"></script>
+</body>
+</html>

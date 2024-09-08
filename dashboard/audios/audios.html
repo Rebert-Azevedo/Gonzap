@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Áudios</title>
+    <link rel="stylesheet" href="./audios.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciar Áudios</h1>
+        <button id="btn-add-audio">Adicionar Áudio</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Áudio</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="audio-list">
+                <!-- Áudios adicionados aparecerão aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para adicionar/editar áudios -->
+    <div id="audio-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Adicionar Áudio</h2>
+            <form id="audio-form">
+                <label for="audio-name">Nome</label>
+                <input type="text" id="audio-name" required>
+                <span class="error" id="name-error">Campo obrigatório</span>
+
+                <label for="audio-file">Selecione o áudio</label>
+                <input type="file" id="audio-file" accept="audio/*" required>
+                <span class="error" id="file-error">Campo obrigatório</span>
+
+                <div class="modal-buttons">
+                    <button type="button" id="btn-cancel">Cancelar</button>
+                    <button type="submit" id="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./audios.js"></script>
+</body>
+</html>
